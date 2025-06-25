@@ -62,28 +62,28 @@ const ProductForm = ({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
               <div className="lg:col-span-2">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldName')}</label>
-                <input type="text" id="name" {...register('name', { required: tValidation('productNameRequired') })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.name ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder={tForm('fieldNamePlaceholder')} />
+                <input type="text" id="name" {...register('name', { required: tValidation('productNameRequired') })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400 ${errors.name ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder={tForm('fieldNamePlaceholder')} />
                 {errors.name && <p className="text-red-500 text-sm mt-2 flex items-center gap-1"><AlertCircle className="h-4 w-4" />{errors.name.message}</p>}
               </div>
               <div>
                 <label htmlFor="code" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldProductCode')}</label>
                 <div className="flex gap-2">
-                  <input type="text" id="code" {...register('code', { required: tValidation('productCodeRequired') })} className={`flex-grow px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.code ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder={tForm('fieldProductCodePlaceholder')} />
+                  <input type="text" id="code" {...register('code', { required: tValidation('productCodeRequired') })} className={`flex-grow px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400 ${errors.code ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder={tForm('fieldProductCodePlaceholder')} />
                   <button type="button" onClick={handleGenerateCode} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2 text-sm font-semibold"><Wand2 className="h-4 w-4"/> {tForm('generateCode')}</button>
                 </div>
                 {errors.code && <p className="text-red-500 text-sm mt-2 flex items-center gap-1"><AlertCircle className="h-4 w-4" />{errors.code.message}</p>}
               </div>
               <div>
                 <label htmlFor="brand" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldBrand')}</label>
-                <input type="text" id="brand" {...register('brand')} className="w-full px-4 py-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" placeholder={tForm('fieldBrandPlaceholder')} />
+                <input type="text" id="brand" {...register('brand')} className="w-full px-4 py-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400" placeholder={tForm('fieldBrandPlaceholder')} />
               </div>
               <div>
                 <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldModel')}</label>
-                <input type="text" id="model" {...register('model')} className="w-full px-4 py-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" placeholder={tForm('fieldModelPlaceholder')} />
+                <input type="text" id="model" {...register('model')} className="w-full px-4 py-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400" placeholder={tForm('fieldModelPlaceholder')} />
               </div>
               <div>
                 <label htmlFor="category_id" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldCategory')}</label>
-                <select id="category_id" {...register('category_id', { required: tValidation('categoryRequired') })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors appearance-none bg-white ${errors.category_id ? 'border-red-300 bg-red-50' : 'border-gray-300'}`}>
+                <select id="category_id" {...register('category_id', { required: tValidation('categoryRequired') })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors appearance-none bg-white text-gray-900 ${errors.category_id ? 'border-red-300 bg-red-50' : 'border-gray-300'}`}>
                   <option value="" disabled>{tForm('fieldCategoryPlaceholder')}</option>
                   {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
                 </select>
@@ -91,7 +91,7 @@ const ProductForm = ({
               </div>
               <div className="lg:col-span-2">
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldDescription')}</label>
-                <textarea id="description" {...register('description')} rows={4} className="w-full px-4 py-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors" placeholder={tForm('fieldDescriptionPlaceholder')}></textarea>
+                <textarea id="description" {...register('description')} rows={4} className="w-full px-4 py-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400" placeholder={tForm('fieldDescriptionPlaceholder')}></textarea>
               </div>
             </div>
           </div>
@@ -105,12 +105,12 @@ const ProductForm = ({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
               <div>
                 <label htmlFor="purchase_price" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldPurchasePrice')}</label>
-                <input type="number" id="purchase_price" {...register('purchase_price')} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.purchase_price ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0.00" step="0.01" />
+                <input type="number" id="purchase_price" {...register('purchase_price')} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400 ${errors.purchase_price ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0.00" step="0.01" />
                 {errors.purchase_price && <p className="text-red-500 text-sm mt-2 flex items-center gap-1"><AlertCircle className="h-4 w-4" />{errors.purchase_price.message}</p>}
               </div>
               <div>
                 <label htmlFor="sale_price" className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldSalePrice')}</label>
-                <input type="number" id="sale_price" {...register('sale_price', { required: tValidation('salePriceInvalid'), valueAsNumber: true })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.sale_price ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0.00" step="0.01" />
+                <input type="number" id="sale_price" {...register('sale_price', { required: tValidation('salePriceInvalid'), valueAsNumber: true })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400 ${errors.sale_price ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0.00" step="0.01" />
                 {errors.sale_price && <p className="text-red-500 text-sm mt-2 flex items-center gap-1"><AlertCircle className="h-4 w-4" />{errors.sale_price.message}</p>}
               </div>
             </div>
@@ -125,13 +125,13 @@ const ProductForm = ({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldStock')}</label>
-                <input type="number" {...register('current_stock', { valueAsNumber: true })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.current_stock ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0" />
+                <input type="number" {...register('current_stock', { valueAsNumber: true })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400 ${errors.current_stock ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0" />
                 {errors.current_stock && <p className="text-red-500 text-sm mt-2 flex items-center gap-1"><AlertCircle className="h-4 w-4" />{errors.current_stock.message}</p>}
                 <p className="text-xs text-gray-500 mt-1">{tForm('stockHelpText')}</p>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">{tForm('fieldMinStock')}</label>
-                <input type="number" {...register('minimum_stock', { valueAsNumber: true })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${errors.minimum_stock ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0" />
+                <input type="number" {...register('minimum_stock', { valueAsNumber: true })} className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 placeholder:text-gray-400 ${errors.minimum_stock ? 'border-red-300 bg-red-50' : 'border-gray-300'}`} placeholder="0" />
                 {errors.minimum_stock && <p className="text-red-500 text-sm mt-2 flex items-center gap-1"><AlertCircle className="h-4 w-4" />{errors.minimum_stock.message}</p>}
                 <p className="text-xs text-gray-500 mt-1">{tForm('minStockHelpText')}</p>
               </div>
